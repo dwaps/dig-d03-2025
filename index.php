@@ -1,62 +1,32 @@
 <?php
 
-// CONDITIONS
+// BOUCLES
 
-$mood = "content";
-
-// If, elseif, else
-if ($mood === "content") {
-  echo "Tu es $mood", PHP_EOL;
-} elseif ($mood === "triste") {
-  echo "Quel dommage :(", PHP_EOL;
-} else {
-  echo "Quel est ton humeur ??", PHP_EOL;
+// WHILE, DO WHILE
+$i = 0;
+while ($i <= 10) {
+  echo "Le compteur vaut : ", $i++, PHP_EOL;
 }
-?>
+while ($i <= 10):
+  echo "Le compteur vaut : ", $i++, PHP_EOL;
+endwhile;
 
-<?php if ($mood === "content"): ?>
-  <p>Tu es <?= $mood ?></p>
-<?php elseif ($mood === "triste"): ?>
-  <p>Quel dommage :(</p>
-<?php else: ?>
-  <p>Quel est ton hummeur ??</p>
-<?php endif; ?>
+// Pas de syntaxe alternative !!!
+do {
+  print "Itération $i" . PHP_EOL;
+  $i++;
+} while ($i <= 15);
 
-<?php
 
-// switch
-switch ($mood) {
-  case 'content':
-    echo 'toi content !', PHP_EOL;
-    break;
-  case 'triste':
-  case 'maussade':
-    echo 'dommage', PHP_EOL;
-    break;
-  default:
-    echo 'ton humeur ??', PHP_EOL;
+// FOR
+for ($i = 0; $i <= 10; $i++) {
+  echo "Le compteur vaut : ", $i++, PHP_EOL;
 }
+for ($i = 0; $i <= 10; $i++):
+  echo "Le compteur vaut : ", $i++, PHP_EOL;
+endfor;
 
-// match --> cas stricts
-$userChoice = "salade";
-$menu = match ($userChoice) {
-  "plat principal" => "raviolis",
-  "entrée", "salade" => "riz/thon/tomates",
-  default => "plat non servi",
-};
-echo $menu, PHP_EOL;
-
-// match --> cas complexes et ternaire
-$age = 56;
-$accessAllowed = match (true) {
-  $age >= 18 => true,
-  default => false,
-};
-echo $accessAllowed ? "Accès autorisé" : "Accès interdit", PHP_EOL;
-
-// condition avec opérateur de fusion null
-// (coalescence des null)
-$username;
-$userConnected = $username ?? 'anonyme';
-$userConnected = isset($username) ? $username : 'anonyme';
-echo $userConnected, PHP_EOL;
+// FOREACH
+foreach (str_split("salut") as $char) {
+  echo $char, PHP_EOL;
+}
