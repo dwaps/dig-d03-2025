@@ -1,24 +1,29 @@
 <?php
 
-$var;
+// TYPES SCALAIRES
 
-$myVar = 'salut';
-$var = 56;
+echo gettype(true), PHP_EOL;
+echo gettype(67), PHP_EOL;
+echo gettype('coco'), PHP_EOL;
+echo gettype(`ls`), PHP_EOL;
 
-echo '<p>$var</p>' . PHP_EOL;
-echo "<p>$var</p>", PHP_EOL;
-print $var . PHP_EOL;
+echo `ls ..`;
 
-echo '<pre>';
-print_r([12, 7]);
-var_dump([12, 7]);
-echo '</pre>';
+// TYPES COMPOSES
+$friends = ['coco', 'jaco', 'pedro'];
+echo gettype($friends), PHP_EOL;
+// echo $friends;
+print_r($friends);
+var_dump($friends);
 
-// Commentaire
-# Commentaire
-/*
-  Commentaire multilignes
-*/
-/**
- * Commentaire de documentation
- */
+// TYPES SPECIAUX
+// resource (référence)
+$user = null;
+$user = NULL;
+echo gettype($user), PHP_EOL;
+
+// Vérification
+// is_xxx()
+print is_int(78); // true --> 1
+print is_numeric("78"); // true --> 1
+print is_scalar("78"); // true --> 1
