@@ -1,32 +1,22 @@
 <?php
 
-// BOUCLES
+// TABLEAUX
 
-// WHILE, DO WHILE
-$i = 0;
-while ($i <= 10) {
-  echo "Le compteur vaut : ", $i++, PHP_EOL;
+$array = [
+  'one' => 'val1',
+  'two' => 'val2',
+  'three' => 'val3',
+];
+
+var_dump($array);
+
+echo count($array), PHP_EOL;
+echo sizeof($array), PHP_EOL;
+
+foreach ($array as $item) {
+  echo $item, PHP_EOL;
 }
-while ($i <= 10):
-  echo "Le compteur vaut : ", $i++, PHP_EOL;
-endwhile;
 
-// Pas de syntaxe alternative !!!
-do {
-  print "Itération $i" . PHP_EOL;
-  $i++;
-} while ($i <= 15);
-
-
-// FOR
-for ($i = 0; $i <= 10; $i++) {
-  echo "Le compteur vaut : ", $i++, PHP_EOL;
-}
-for ($i = 0; $i <= 10; $i++):
-  echo "Le compteur vaut : ", $i++, PHP_EOL;
-endfor;
-
-// FOREACH
-foreach (str_split("salut") as $char) {
-  echo $char, PHP_EOL;
+foreach ($array as $key => $value) {
+  echo $key, " => ", $value, PHP_EOL;
 }
