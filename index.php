@@ -16,7 +16,36 @@
 </head>
 
 <body>
+  <div class="container">
 
+    <header>
+      <div class="logo">ToraTaTache</div>
+    </header>
+
+    <div class="content">
+      <div class="todo-container">
+
+        <h1>Mes Tâches</h1>
+
+        <ul class="todo-list">
+          <li class="todo-item">
+            <span class="todo-name">Faire la vaisselle</span>
+            <button class="btn btn-primary btn-small">
+              Valider
+            </button>
+            <button class="btn btn-danger btn-small">
+              Supprimer
+            </button>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+    <footer>
+      <p>2025 &copy; Tous droits réservés</p>
+    </footer>
+  </div>
 </body>
 
 </html>
