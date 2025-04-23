@@ -1,0 +1,10 @@
+
+CONSIGNE TP TODOS
+
+1/ Découper le code HTML :
+  - Tout ce qu'il y a dans le <head> (sauf <title>) dans un fichier head.php
+  - le <header> dans un fichier header.php
+  - le <footer> dans un fichier footer.php
+
+Organisation : mettre tous les fichiers inclus dans un dossier includes/ à la racine du projet.
+
