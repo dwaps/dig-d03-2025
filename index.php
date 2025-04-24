@@ -26,15 +26,17 @@ $todos = [
         <h1>Mes Tâches</h1>
 
         <ul class="todo-list">
-          <li class="todo-item">
-            <span class="todo-name">Faire la vaisselle</span>
-            <button class="btn btn-primary btn-small">
-              Valider
-            </button>
-            <button class="btn btn-danger btn-small">
-              Supprimer
-            </button>
-          </li>
+          <?php foreach ($todos as $t): ?>
+            <li class="todo-item">
+              <span class="todo-name"><?= $t['name'] ?></span>
+              <button class="btn btn-primary btn-small">
+                Valider
+              </button>
+              <button class="btn btn-danger btn-small">
+                Supprimer
+              </button>
+            </li>
+          <?php endforeach; ?>
         </ul>
 
       </div>
