@@ -1,5 +1,8 @@
 <?php
 session_start();
+// session_unset();
+// session_destroy();
+
 require_once __DIR__ . '/data.php';
 
 $_SESSION['newTitle'] = $_SESSION['newTitle'] ?? $title;
