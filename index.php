@@ -1,26 +1,24 @@
+<?php
+$todos = [
+  ["id" => "a7749a0f-cf14-4b95-9864-8893c695bca2", "name" => "Apprendre le HTML", "done" => false],
+  ["id" => "8b9832cf-afa8-4802-8e05-ff4888a5d0a5", "name" => "Apprendre le JavaScript", "done" => false],
+  ["id" => "e57be897-96d6-4ee8-98a2-9522d1b324fb", "name" => "Apprendre le PHP", "done" => false],
+  ["id" => "04d6f5b9-d027-422f-af57-2910cda8e23f", "name" => "Coder, coder, coder", "done" => false],
+];
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="public/css/style.css">
-  <script defer src="public/js/index.js"></script>
-
-  <!-- GOOGLE FONT -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-
+  <?php require_once __DIR__ . '/includes/head.php' ?>
   <title>ToraTaTache</title>
 </head>
 
 <body>
   <div class="container">
 
-    <header>
-      <div class="logo">ToraTaTache</div>
-    </header>
+    <?php require_once __DIR__ . '/includes/header.php' ?>
 
     <div class="content">
       <div class="todo-container">
@@ -42,9 +40,7 @@
       </div>
     </div>
 
-    <footer>
-      <p>2025 &copy; Tous droits réservés</p>
-    </footer>
+    <?php require_once __DIR__ . '/includes/footer.php' ?>
   </div>
 </body>
 
