@@ -9,6 +9,18 @@ if (!isset($_SESSION['todos'])) {
   require_once __DIR__ . "/includes/todos.php";
   $_SESSION['todos'] = $todos;
 }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $newTodo = $_POST['todo'] ?? '';
+
+  if ($newTodo) {
+    array_unshift($_SESSION['todos'], [
+      'id' => uniqid(),
+      'name' => $newTodo,
+      'done' => false,
+    ]);
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +40,14 @@ if (!isset($_SESSION['todos'])) {
       <div class="todo-container">
 
         <h1>Mes Tâches</h1>
+
+        <form action="/" method="POST" class="todo-form">
+          <input type="text"
+            name="todo"
+            autocomplete="off"
+            autofocus>
+          <button class="btn btn-primary" type="submit">Ajouter</button>
+        </form>
 
         <ul class="todo-list">
           <?php foreach ($_SESSION['todos'] as $todo): ?>
