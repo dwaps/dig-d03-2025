@@ -17,4 +17,8 @@ Organisation : mettre tous les fichiers inclus dans un dossier includes/ à la r
 3/ Supprimer d'une tâche
   - Dans un 1er temps, vous pouvez faire la suppression dans l'index.php
   - Vous devez ensuite utiliser un fichier dédié à la suppression d'une tâche
-  
+
+4/ Modifier le statut d'une tâche
+  - Contrainte : utiliser un fichier dédié
+
+5/ Ajouter une tâche (vous pouvez utiliser l'index.php directement)
