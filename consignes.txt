@@ -8,3 +8,13 @@ CONSIGNE TP TODOS
 
 Organisation : mettre tous les fichiers inclus dans un dossier includes/ à la racine du projet.
 
+2/ Mettre à jour la vue en fonction du tableau de todos
+  - Affichage du nom
+  - Affichage des status
+    --> appliquer la classe .low-opacity
+    --> remplacer "Valider" par "Annuler"
+
+3/ Supprimer d'une tâche
+  - Dans un 1er temps, vous pouvez faire la suppression dans l'index.php
+  - Vous devez ensuite utiliser un fichier dédié à la suppression d'une tâche
+  
