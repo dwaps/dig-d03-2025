@@ -1,12 +1,26 @@
-<form method="POST" action="/">
-  <input type="text" placeholder="Votre nom ?" value="Michael" name="name">
-  <input type="text" placeholder="Votre $age ?" value="88" name="age">
-  <button type="submit">Go!</button>
-</form>
+<?php
+session_start();
+require_once __DIR__ . '/data.php';
 
+$_SESSION['newTitle'] = $_SESSION['newTitle'] ?? $title;
+?>
 
-<h2>Méthode GET</h2>
-<p>Bonjour <?= $_GET['name'] ?? '' ?></p>
+<!DOCTYPE html>
+<html lang="en">
 
-<h2>Méthode POST</h2>
-<p>Bonjour <?= $_POST['name'] ?? '' ?></p>
+<head>
+  <meta charset="UTF-8">
+  <title><?= $_SESSION['newTitle'] ?></title>
+</head>
+
+<body>
+
+  <h1><?= $_SESSION['newTitle'] ?></h1>
+
+  <a href="./cible.php?newTitle=Bienvenue">
+    Modifier la variable $title
+  </a>
+
+</body>
+
+</html>
