@@ -1,22 +1,12 @@
-<?php
+<form method="POST" action="/">
+  <input type="text" placeholder="Votre nom ?" value="Michael" name="name">
+  <input type="text" placeholder="Votre $age ?" value="88" name="age">
+  <button type="submit">Go!</button>
+</form>
 
-// TABLEAUX
 
-$array = [
-  'one' => 'val1',
-  'two' => 'val2',
-  'three' => 'val3',
-];
+<h2>Méthode GET</h2>
+<p>Bonjour <?= $_GET['name'] ?? '' ?></p>
 
-var_dump($array);
-
-echo count($array), PHP_EOL;
-echo sizeof($array), PHP_EOL;
-
-foreach ($array as $item) {
-  echo $item, PHP_EOL;
-}
-
-foreach ($array as $key => $value) {
-  echo $key, " => ", $value, PHP_EOL;
-}
+<h2>Méthode POST</h2>
+<p>Bonjour <?= $_POST['name'] ?? '' ?></p>
