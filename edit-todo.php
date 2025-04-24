@@ -11,7 +11,7 @@ if ($id && count($todos)) {
   $todoIndex = array_search($id, array_column($todos, 'id'));
 
   if ($todoIndex !== false) {
-    array_splice($todos, $todoIndex, 1);
+    $todos[$todoIndex]['done'] = !$todos[$todoIndex]['done'];
   }
 }
 

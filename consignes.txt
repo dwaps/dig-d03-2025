@@ -22,3 +22,5 @@ Organisation : mettre tous les fichiers inclus dans un dossier includes/ à la r
   - Contrainte : utiliser un fichier dédié
 
 5/ Ajouter une tâche (vous pouvez utiliser l'index.php directement)
+
+6/ Gestion d'erreur : Afficher un message si l'utilisateur valide le formulaire sans renseigner le champ de saisi (class --> text-danger).

@@ -33,9 +33,11 @@ if (!isset($_SESSION['todos'])) {
           <?php foreach ($_SESSION['todos'] as $todo): ?>
             <li class="todo-item <?= $todo['done'] ? 'low-opacity' : '' ?>">
               <span class="todo-name"><?= $todo['name'] ?></span>
-              <button class="btn btn-primary btn-small">
-                <?= $todo['done'] ? 'Annuler' : 'Valider' ?>
-              </button>
+              <a href="/edit-todo.php?id=<?= $todo['id'] ?>">
+                <button class="btn btn-primary btn-small">
+                  <?= $todo['done'] ? 'Annuler' : 'Valider' ?>
+                </button>
+              </a>
               <a href="/remove-todo.php?id=<?= $todo['id'] ?>">
                 <button class="btn btn-danger btn-small">
                   Supprimer
