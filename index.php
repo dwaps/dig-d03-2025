@@ -1,4 +1,15 @@
-<?php require_once __DIR__ . "/includes/todos.php" ?>
+<?php
+
+session_start();
+// session_unset();
+// session_destroy();
+
+// Si la clé 'todos' n'existe pas dans $_SESSION
+if (!isset($_SESSION['todos'])) {
+  require_once __DIR__ . "/includes/todos.php";
+  $_SESSION['todos'] = $todos;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -19,7 +30,7 @@
         <h1>Mes Tâches</h1>
 
         <ul class="todo-list">
-          <?php foreach ($todos as $todo): ?>
+          <?php foreach ($_SESSION['todos'] as $todo): ?>
             <li class="todo-item <?= $todo['done'] ? 'low-opacity' : '' ?>">
               <span class="todo-name"><?= $todo['name'] ?></span>
               <button class="btn btn-primary btn-small">
