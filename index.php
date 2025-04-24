@@ -4,6 +4,8 @@ session_start();
 // session_unset();
 // session_destroy();
 
+$error = '';
+
 // Si la clé 'todos' n'existe pas dans $_SESSION
 if (!isset($_SESSION['todos'])) {
   require_once __DIR__ . "/includes/todos.php";
@@ -19,6 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       'name' => $newTodo,
       'done' => false,
     ]);
+  } else {
+    $error = 'Il faut renseigner une todo !';
   }
 }
 ?>
@@ -48,6 +52,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             autofocus>
           <button class="btn btn-primary" type="submit">Ajouter</button>
         </form>
+        <?php if ($error): ?>
+          <p class="text-danger"><?= $error ?></p>
+        <?php endif; ?>
 
         <ul class="todo-list">
           <?php foreach ($_SESSION['todos'] as $todo): ?>
