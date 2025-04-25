@@ -1,29 +1,23 @@
 <?php
-session_start();
-// session_unset();
-// session_destroy();
 
-require_once __DIR__ . '/data.php';
+const FILEPATH = __DIR__ . "/books.json";
+// define("FILEPATH", __DIR__ . "/books.json");
 
-$_SESSION['newTitle'] = $_SESSION['newTitle'] ?? $title;
-?>
+if (file_exists(FILEPATH)) {
+  $filecontent = file_get_contents(FILEPATH);
+  $books = json_decode($filecontent, true);
 
-<!DOCTYPE html>
-<html lang="en">
+  // Tableau d'objet
+  // var_dump($books[0]->title);
 
-<head>
-  <meta charset="UTF-8">
-  <title><?= $_SESSION['newTitle'] ?></title>
-</head>
+  // Tableau associatif
+  var_dump($books[0]['title']);
 
-<body>
+  $books[] = [
+    'id' => '70a1a502-44a8-4443-82c5-18b2cce54f04',
+    'title' => 'Biographie',
+    'price' => 56
+  ];
 
-  <h1><?= $_SESSION['newTitle'] ?></h1>
-
-  <a href="./cible.php?newTitle=Bienvenue">
-    Modifier la variable $title
-  </a>
-
-</body>
-
-</html>
+  file_put_contents(FILEPATH, json_encode($books));
+}
